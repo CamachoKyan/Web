@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Páginas Estáticas y Dinámicas</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgba(18, 18, 18, 1);
+      color: white;
+    }
+
+    footer img {
+      height: 15px;
+      width: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Programación Web</span>
+    </div>
+  </nav>
+
+  <main class="container my-5 flex-grow-1">
+
+    <section class="mb-5">
+      <h2 class="mb-3">Páginas Web Estáticas y Dinámicas</h2>
+      <p>
+        Existen dos métodos básicos de diseño web: páginas web estáticas y dinámicas.
+        Las páginas estáticas muestran el mismo contenido cada vez que se visitan,
+        mientras que las páginas dinámicas generan contenido en tiempo real según
+        la interacción del usuario.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>¿Qué son las páginas web estáticas?</h3>
+      <p>
+        Son páginas sencillas escritas en HTML, CSS y JavaScript. Cuando el servidor
+        recibe una solicitud, envía la respuesta sin realizar procesos adicionales.
+        El contenido permanece igual hasta que alguien lo modifique manualmente.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>¿Qué son las páginas web dinámicas?</h3>
+      <p>
+        Son páginas cuyo contenido cambia según el usuario o la información almacenada
+        en una base de datos. Se desarrollan con tecnologías como CGI, AJAX, ASP o ASP.NET.
+        Son usadas cuando la información cambia constantemente, como el clima o precios de acciones.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3 class="mb-3">Diferencias</h3>
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered align-middle">
+          <thead class="table-secondary text-dark">
+            <tr>
+              <th>Página web estática</th>
+              <th>Página web dinámica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Permanece igual hasta que alguien la modifique manualmente.</td>
+              <td>El contenido cambia según el visitante.</td>
+            </tr>
+            <tr>
+              <td>Son simples en términos de complejidad.</td>
+              <td>Son más complejas.</td>
+            </tr>
+            <tr>
+              <td>La información rara vez cambia.</td>
+              <td>La información cambia con frecuencia.</td>
+            </tr>
+            <tr>
+              <td>Cargan más rápido.</td>
+              <td>Tardan más en cargar.</td>
+            </tr>
+            <tr>
+              <td>No utilizan base de datos.</td>
+              <td>Utilizan base de datos.</td>
+            </tr>
+            <tr>
+              <td>Escritas en HTML, CSS y JavaScript.</td>
+              <td>Escritas en CGI, AJAX, ASP, ASP.NET, etc.</td>
+            </tr>
+            <tr>
+              <td>No contienen programas de aplicación.</td>
+              <td>Contienen programas de aplicación.</td>
+            </tr>
+            <tr>
+              <td>Requieren menos trabajo y costo.</td>
+              <td>Requieren más trabajo y costo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h3>Ventajas y Desventajas</h3>
+
+      <h5 class="mt-4">Páginas Estáticas</h5>
+      <ul>
+        <li><strong>Ventajas:</strong> Rápidas, económicas, fáciles de desarrollar.</li>
+        <li><strong>Desventajas:</strong> No permiten personalización ni actualización automática.</li>
+      </ul>
+
+      <h5 class="mt-4">Páginas Dinámicas</h5>
+      <ul>
+        <li><strong>Ventajas:</strong> Contenido actualizado automáticamente, personalización del usuario.</li>
+        <li><strong>Desventajas:</strong> Mayor costo, mayor complejidad y menor velocidad de carga.</li>
+      </ul>
+    </section>
+
+    <section class="mb-5">
+
+      <h5 class="mt-4">Ejemplos de páginas estáticas</h5>
+      <ul>
+        <li>
+          <a href="https://wikipedia.org" target="_blank" rel="noopener noreferrer">
+            Wikipedia – Enciclopedia en línea con información de todo tipo
+          </a>
+        </li>
+        <li>
+          <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+            React.dev – Documentación oficial para aprender y usar React
+          </a>
+        </li>
+        <li>
+          <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+            Bootstrap – Framework CSS para diseñar páginas web responsivas
+          </a>
+        </li>
+      </ul>
+
+      <h5 class="mt-4">Ejemplos de páginas dinámicas</h5>
+      <ul>
+        <li>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            YouTube – Plataforma para ver y compartir videos personalizados
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            Instagram – Red social para compartir fotos y videos
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+            X (Twitter) – Red social para publicar noticias y contenido en tiempo real
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="mt-auto align-items-center py-3 bg-dark">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
+        <img src="./Lynx.svg" alt="Logo">
+      </a>
+      <span class="mb-3 mb-md-0">© 2026 Kyan Camacho</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
