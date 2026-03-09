@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Hosting, VPS y Cloud</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: rgba(18, 18, 18, 1);
+      color: white;
+    }
+
+    footer img {
+      height: 15px;
+      width: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Programación Web</span>
+    </div>
+  </nav>
+
+  <main class="container my-5 flex-grow-1">
+
+    <section class="mb-5">
+      <h2 class="mb-3">Hosting, VPS y Computación en la Nube</h2>
+      <p>
+        Para que un sitio web sea accesible en Internet es necesario almacenarlo en un servidor.
+        Existen diferentes formas de hacerlo, entre las más comunes se encuentran el hosting
+        tradicional, los servidores privados virtuales (VPS) y la computación en la nube (Cloud).
+        Cada uno ofrece distintas capacidades, niveles de control y escalabilidad dependiendo
+        de las necesidades del proyecto web.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>¿Qué es el Hosting?</h3>
+      <p>
+        El hosting o alojamiento web es un servicio que permite almacenar los archivos de un sitio
+        web en un servidor conectado a Internet. Cuando un usuario escribe una dirección web en su
+        navegador, el servidor donde está alojado el sitio envía los archivos necesarios para que
+        la página se muestre correctamente.
+      </p>
+
+      <p>
+        Este tipo de servicio suele ser compartido, lo que significa que varios sitios web utilizan
+        el mismo servidor. Es una opción económica y fácil de usar, ideal para páginas pequeñas,
+        blogs o sitios informativos.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>¿Qué es un VPS (Servidor Privado Virtual)?</h3>
+      <p>
+        Un VPS es un servidor virtual que funciona dentro de un servidor físico más grande.
+        A diferencia del hosting compartido, cada usuario tiene una parte dedicada de los
+        recursos del servidor, como memoria RAM, almacenamiento y procesador.
+      </p>
+
+      <p>
+        Esto permite tener mayor control sobre el servidor, instalar software personalizado
+        y manejar aplicaciones web más complejas. Es una opción común para proyectos en crecimiento
+        que requieren más rendimiento y flexibilidad.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>¿Qué es la Computación en la Nube (Cloud)?</h3>
+      <p>
+        La computación en la nube consiste en utilizar múltiples servidores conectados entre sí
+        para almacenar y ejecutar aplicaciones. En lugar de depender de un solo servidor,
+        los recursos se distribuyen en una red de servidores que trabajan juntos.
+      </p>
+
+      <p>
+        Este modelo permite escalar recursos de manera automática según la demanda del sitio web,
+        lo que lo hace ideal para aplicaciones grandes, plataformas de streaming o servicios
+        que reciben miles o millones de visitas.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>Relación con la Programación Web</h3>
+
+      <p>
+        La programación web se encarga de crear los sitios y aplicaciones que funcionan en
+        Internet utilizando tecnologías como HTML, CSS, JavaScript y lenguajes del lado del
+        servidor como PHP, Python o Node.js.
+      </p>
+
+      <p>
+        Sin embargo, una vez desarrollado el sitio web, es necesario publicarlo en un servidor
+        para que los usuarios puedan acceder a él desde cualquier lugar. Aquí es donde entran
+        en juego los servicios de hosting, VPS y cloud.
+      </p>
+
+      <ul>
+        <li>Permiten almacenar los archivos del sitio web.</li>
+        <li>Procesan solicitudes de los usuarios.</li>
+        <li>Ejecutan código del lado del servidor.</li>
+        <li>Gestionan bases de datos y aplicaciones.</li>
+      </ul>
+
+      <p>
+        En otras palabras, la programación web crea el sitio, mientras que el hosting o la
+        infraestructura en la nube permiten que ese sitio funcione en Internet.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3 class="mb-3">Diferencias entre Hosting, VPS y Cloud</h3>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered align-middle">
+          <thead class="table-secondary text-dark">
+            <tr>
+              <th>Hosting Compartido</th>
+              <th>VPS</th>
+              <th>Cloud</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Varios sitios web comparten el mismo servidor.</td>
+              <td>Un servidor virtual con recursos dedicados.</td>
+              <td>Red de múltiples servidores conectados.</td>
+            </tr>
+
+            <tr>
+              <td>Menor costo.</td>
+              <td>Costo intermedio.</td>
+              <td>Puede ser más costoso según uso.</td>
+            </tr>
+
+            <tr>
+              <td>Menor control del servidor.</td>
+              <td>Mayor control y personalización.</td>
+              <td>Control flexible y escalable.</td>
+            </tr>
+
+            <tr>
+              <td>Ideal para sitios pequeños.</td>
+              <td>Ideal para proyectos en crecimiento.</td>
+              <td>Ideal para aplicaciones grandes.</td>
+            </tr>
+
+            <tr>
+              <td>Recursos limitados.</td>
+              <td>Recursos dedicados virtualmente.</td>
+              <td>Recursos escalables bajo demanda.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <section class="mb-5">
+      <h3>Ventajas y Desventajas</h3>
+
+      <h5 class="mt-4">Hosting</h5>
+      <ul>
+        <li><strong>Ventajas:</strong> Económico, fácil de usar, ideal para principiantes.</li>
+        <li><strong>Desventajas:</strong> Recursos limitados y menor control del servidor.</li>
+      </ul>
+
+      <h5 class="mt-4">VPS</h5>
+      <ul>
+        <li><strong>Ventajas:</strong> Mayor rendimiento, control del servidor y personalización.</li>
+        <li><strong>Desventajas:</strong> Requiere más conocimientos técnicos.</li>
+      </ul>
+
+      <h5 class="mt-4">Cloud</h5>
+      <ul>
+        <li><strong>Ventajas:</strong> Alta disponibilidad, escalabilidad y gran capacidad.</li>
+        <li><strong>Desventajas:</strong> Puede ser más complejo y costoso dependiendo del uso.</li>
+      </ul>
+
+    </section>
+
+    <section class="mb-5">
+
+      <h3>Referencias</h3>
+
+      <ul>
+        <li>
+          <a href="https://aws.amazon.com/what-is-cloud-computing/" target="_blank">
+            Amazon Web Services. (2024). What is Cloud Computing.
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.cloudflare.com/learning/" target="_blank">
+            Cloudflare Learning Center. Web Hosting and Cloud Infrastructure.
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.ibm.com/topics/cloud-computing" target="_blank">
+            IBM. Introduction to Cloud Computing.
+          </a>
+        </li>
+
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction"
+            target="_blank">
+            Mozilla Developer Network (MDN). Introduction to Server-side Web Development.
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+  </main>
+
+  <footer class="mt-auto align-items-center py-3 bg-dark">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
+        <img src="./Lynx.svg" alt="Logo">
+      </a>
+      <span class="mb-3 mb-md-0">© 2026 Kyan Camacho</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
