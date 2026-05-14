@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Multiplicar tabla del 10</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgba(18, 18, 18, 1);
+      color: white;
+    }
+
+    footer img {
+      height: 15px;
+      width: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Programación Web</span>
+    </div>
+  </nav>
+
+  <main class="container my-5 flex-grow-1">
+
+    <section class="mb-5">
+      <h2 class="mb-3">Multiplicador de números</h2>
+    </section>
+
+    <section class="mb-5">
+      <h3>Ingreasa un número para multiplicarlo del 1 al 10</h3>
+      <input type="number" placeholder="0">
+
+      <button class="btn btn-primary">Multiplicar</button>
+
+      <div id="ans"></div>
+
+    </section>
+
+  </main>
+
+  <footer class="mt-auto align-items-center py-3 bg-dark">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
+        <img src="./Lynx.svg" alt="Logo">
+      </a>
+      <span class="mb-3 mb-md-0">© 2026 Kyan Camacho</span>
+    </div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelector("button")
+
+    const section = document.getElementById("ans")
+
+    document.querySelector("button").addEventListener("click", () => {
+      section.innerHTML = ""
+      var input = Number(document.querySelector("input").value)
+
+      for (let i = 1; i < 11; i++) {
+        const p = document.createElement("p");
+        let ans = input * i
+
+        p.textContent = Number(ans.toFixed(2))
+
+        section.appendChild(p)
+      }
+    })
+  </script>
+
+</body>
+
+</html>

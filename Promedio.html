@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Páginas Estáticas y Dinámicas</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgba(18, 18, 18, 1);
+      color: white;
+    }
+
+    footer img {
+      height: 15px;
+      width: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Programación Web</span>
+    </div>
+  </nav>
+
+  <main class="container my-5 flex-grow-1">
+
+    <section class="mb-5">
+      <h2 class="mb-3">Calcula el promedio de 3 calificaciones</h2>
+      <p>
+        <input type="number" class="Num" id="Cal1" min="0" max="10" placeholder="0" required />
+        <input type="number" class="Num" id="Cal2" min="0" max="10" placeholder="0" required />
+        <input type="number" class="Num" id="Cal3" min="0" max="10" placeholder="0" required />
+
+        <button class="btn btn-primary" id="Promedio">Calcular Promedio</button>
+
+      <h4>Resultado:<span id="Resultado"></span> </h4>
+
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="mt-auto align-items-center py-3 bg-dark">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
+        <img src="./Lynx.svg" alt="Logo">
+      </a>
+      <span class="mb-3 mb-md-0">© 2026 Kyan Camacho</span>
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  const btn = document.getElementById("Promedio");
+
+  function Promedio(C1, C2, C3) {
+
+    C1 = Number(document.getElementById("Cal1").value);
+    C2 = Number(document.getElementById("Cal2").value);
+    C3 = Number(document.getElementById("Cal3").value);
+
+    return Number(((C1 + C2 + C3) / 3).toFixed(2));
+  }
+
+  var inputs = document.querySelectorAll("input");
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      var val = input.value;
+
+      if (val > 10) input.value = Number(10);
+      if (val < 0) input.value = Number(0);
+    });
+  });
+
+  btn.addEventListener("click", () => {
+
+    var Cal1 = document.getElementById("Cal1");
+    var Cal2 = document.getElementById("Cal2");
+    var Cal3 = document.getElementById("Cal3");
+
+    if (Cal1 == "" || Cal2 == "" || Cal3 == "") {
+      alert("Tienes que colocar 3 calificaciones")
+    } else {
+      var Prom = Promedio(Cal1, Cal2, Cal3)
+      var Passed = "Aprobado"
+      if (Prom>=7){
+              document.getElementById("Resultado").style.color ="lime";
+      }else{
+              document.getElementById("Resultado").style.color ="red";
+              Passed = "Reprobado"
+      }
+      document.getElementById("Resultado").innerText = ` ${Prom} ${Passed}`
+    }
+  });
+
+</script>
+
+</html>
