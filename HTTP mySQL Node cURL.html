@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Métodos HTTP, MySQL y Node.js</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgba(18, 18, 18, 1);
+      color: white;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      color: white;
+    }
+
+    .card-title {
+      color: #4dd0e1;
+    }
+
+    .badge-custom {
+      background-color: #0d6efd;
+    }
+
+    footer img {
+      height: 15px;
+      width: 20px;
+    }
+
+    .highlight {
+      color: #4dd0e1;
+      font-weight: 600;
+    }
+
+    code {
+      color: #ffd54f;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Programación Web</span>
+    </div>
+  </nav>
+
+  <main class="container my-5 flex-grow-1">
+
+    <section class="mb-5 text-center">
+      <h1 class="mb-3">Métodos HTTP, MySQL y Node.js</h1>
+      <p class="lead">
+        Relación entre el cliente, el servidor y la base de datos en una aplicación web.
+      </p>
+    </section>
+
+    <section class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title h4"><i class="bi bi-arrow-left-right me-2"></i>Métodos HTTP</h2>
+            <p>
+              Los métodos HTTP son acciones que se usan para comunicar al servidor lo que se desea hacer con un recurso.
+              Los más comunes son:
+            </p>
+            <ul>
+              <li><span class="highlight">GET</span>: obtener información.</li>
+              <li><span class="highlight">POST</span>: enviar datos para crear algo nuevo.</li>
+              <li><span class="highlight">PUT</span>: actualizar un recurso completo.</li>
+              <li><span class="highlight">PATCH</span>: actualizar una parte del recurso.</li>
+              <li><span class="highlight">DELETE</span>: eliminar un recurso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title h4"><i class="bi bi-database me-2"></i>MySQL con Node.js</h2>
+            <p>
+              <span class="highlight">MySQL</span> es una base de datos relacional donde se guardan los datos.
+              <span class="highlight">Node.js</span> funciona como servidor y se conecta a MySQL para leer, insertar, actualizar o eliminar datos.
+            </p>
+            <p>
+              La relación entre ambos es que Node.js recibe las peticiones HTTP y usa consultas SQL para trabajar con los datos de MySQL.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title h4"><i class="bi bi-terminal me-2"></i>cURL</h2>
+            <p>
+              <span class="highlight">cURL</span> es una herramienta de línea de comandos que sirve para enviar solicitudes HTTP desde la terminal.
+            </p>
+            <p>
+              Se usa mucho para probar APIs, verificar respuestas del servidor y enviar datos sin necesidad de abrir un navegador.
+            </p>
+            <p>
+              Ejemplo: <code>curl https://api.ejemplo.com/usuarios</code>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title h4 mb-3">Relación entre ellos</h2>
+          <p>
+            En una aplicación web, el navegador o una herramienta como <span class="highlight">cURL</span> envía una petición HTTP
+            a un servidor creado con <span class="highlight">Node.js</span>.
+            Ese servidor procesa la solicitud y, si necesita información guardada, consulta la base de datos <span class="highlight">MySQL</span>.
+          </p>
+          <p>
+            Por ejemplo, cuando una aplicación quiere mostrar usuarios, puede hacer una petición <span class="highlight">GET</span>.
+            Node.js recibe esa petición, ejecuta una consulta SQL en MySQL, obtiene los datos y los devuelve en formato JSON.
+          </p>
+          <p class="mb-0">
+            En cambio, si se quiere registrar un nuevo usuario, se usa <span class="highlight">POST</span>, Node.js recibe la información del formulario,
+            la inserta en MySQL y responde con el resultado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title h4 mb-3">Resumen</h2>
+          <p class="mb-0">
+            Los métodos HTTP indican la acción que se quiere realizar, Node.js actúa como intermediario entre el cliente y MySQL,
+            y cURL sirve para probar esas peticiones desde la terminal. Juntos permiten crear y probar aplicaciones web dinámicas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-auto align-items-center py-3 bg-dark">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
+        <img src="./Lynx.svg" alt="Logo">
+      </a>
+      <span class="mb-3 mb-md-0">© 2026 </span>
+    </div>
+  </footer>
+</body>
+
+</html>
