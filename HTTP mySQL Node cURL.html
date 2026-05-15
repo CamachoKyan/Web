@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Métodos HTTP, MySQL y Node.js</title>
+  <title>Métodos HTTP, MySQL, Node.js y cURL</title>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,32 +15,14 @@
       color: white;
     }
 
-    .card {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      color: white;
-    }
-
-    .card-title {
-      color: #4dd0e1;
-    }
-
-    .badge-custom {
-      background-color: #0d6efd;
-    }
-
     footer img {
       height: 15px;
       width: 20px;
     }
 
     .highlight {
-      color: #4dd0e1;
+      color: #8fd3ff;
       font-weight: 600;
-    }
-
-    code {
-      color: #ffd54f;
     }
   </style>
 </head>
@@ -55,97 +37,185 @@
 
   <main class="container my-5 flex-grow-1">
 
-    <section class="mb-5 text-center">
-      <h1 class="mb-3">Métodos HTTP, MySQL y Node.js</h1>
-      <p class="lead">
-        Relación entre el cliente, el servidor y la base de datos en una aplicación web.
+    <section class="mb-5">
+      <h2 class="mb-3">Relación entre métodos HTTP, MySQL y Node.js</h2>
+      <p>
+        En el desarrollo web, <span class="highlight">HTTP</span>, <span class="highlight">Node.js</span> y
+        <span class="highlight">MySQL</span> trabajan juntos para crear aplicaciones dinámicas.
+        Los métodos HTTP permiten que el navegador o un cliente envíe solicitudes al servidor;
+        Node.js recibe esas solicitudes, procesa la lógica de la aplicación y, cuando es necesario,
+        se conecta a MySQL para guardar, consultar, actualizar o eliminar datos.
+      </p>
+      <p>
+        En otras palabras, <span class="highlight">HTTP</span> es el medio de comunicación,
+        <span class="highlight">Node.js</span> es el servidor que interpreta la petición,
+        y <span class="highlight">MySQL</span> es la base de datos donde se almacenan los datos.
       </p>
     </section>
 
-    <section class="row g-4 mb-5">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title h4"><i class="bi bi-arrow-left-right me-2"></i>Métodos HTTP</h2>
-            <p>
-              Los métodos HTTP son acciones que se usan para comunicar al servidor lo que se desea hacer con un recurso.
-              Los más comunes son:
-            </p>
-            <ul>
-              <li><span class="highlight">GET</span>: obtener información.</li>
-              <li><span class="highlight">POST</span>: enviar datos para crear algo nuevo.</li>
-              <li><span class="highlight">PUT</span>: actualizar un recurso completo.</li>
-              <li><span class="highlight">PATCH</span>: actualizar una parte del recurso.</li>
-              <li><span class="highlight">DELETE</span>: eliminar un recurso.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <section class="mb-5">
+      <h3>¿Qué son los métodos HTTP?</h3>
+      <p>
+        Los métodos HTTP son instrucciones que indican qué acción quiere realizar el cliente sobre un recurso.
+        Los más usados en aplicaciones web son:
+      </p>
+      <ul>
+        <li><strong>GET:</strong> obtiene información del servidor.</li>
+        <li><strong>POST:</strong> envía datos nuevos al servidor.</li>
+        <li><strong>PUT:</strong> actualiza completamente un registro existente.</li>
+        <li><strong>PATCH:</strong> actualiza solo una parte de un registro.</li>
+        <li><strong>DELETE:</strong> elimina un recurso o registro.</li>
+      </ul>
+      <p>
+        Estos métodos suelen relacionarse con operaciones en una base de datos:
+        por ejemplo, <strong>GET</strong> normalmente consulta datos en MySQL,
+        <strong>POST</strong> inserta nuevos registros,
+        <strong>PUT</strong> o <strong>PATCH</strong> modifican registros,
+        y <strong>DELETE</strong> elimina información.
+      </p>
+    </section>
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title h4"><i class="bi bi-database me-2"></i>MySQL con Node.js</h2>
-            <p>
-              <span class="highlight">MySQL</span> es una base de datos relacional donde se guardan los datos.
-              <span class="highlight">Node.js</span> funciona como servidor y se conecta a MySQL para leer, insertar, actualizar o eliminar datos.
-            </p>
-            <p>
-              La relación entre ambos es que Node.js recibe las peticiones HTTP y usa consultas SQL para trabajar con los datos de MySQL.
-            </p>
-          </div>
-        </div>
-      </div>
+    <section class="mb-5">
+      <h3>Relación entre HTTP y MySQL con Node.js</h3>
+      <p>
+        Node.js actúa como intermediario entre el cliente y MySQL. Cuando el usuario hace una petición HTTP,
+        Node.js recibe esa solicitud, la interpreta y ejecuta una operación en la base de datos.
+        Después, devuelve una respuesta HTTP con el resultado.
+      </p>
+      <p>Ejemplo del flujo:</p>
+      <ol>
+        <li>El cliente envía una solicitud <strong>GET</strong> para consultar usuarios.</li>
+        <li>Node.js recibe la petición usando, por ejemplo, Express.</li>
+        <li>Node.js ejecuta una consulta SQL en MySQL.</li>
+        <li>MySQL devuelve los datos.</li>
+        <li>Node.js responde al cliente con JSON o HTML.</li>
+      </ol>
+      <p>
+        Gracias a esta relación, es posible crear sistemas como registros de usuarios,
+        tiendas en línea, blogs, paneles de administración y cualquier aplicación que necesite guardar información.
+      </p>
+    </section>
 
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title h4"><i class="bi bi-terminal me-2"></i>cURL</h2>
-            <p>
-              <span class="highlight">cURL</span> es una herramienta de línea de comandos que sirve para enviar solicitudes HTTP desde la terminal.
-            </p>
-            <p>
-              Se usa mucho para probar APIs, verificar respuestas del servidor y enviar datos sin necesidad de abrir un navegador.
-            </p>
-            <p>
-              Ejemplo: <code>curl https://api.ejemplo.com/usuarios</code>
-            </p>
-          </div>
-        </div>
+    <section class="mb-5">
+      <h3 class="mb-3">Relación entre métodos HTTP y operaciones en MySQL</h3>
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered align-middle">
+          <thead class="table-secondary text-dark">
+            <tr>
+              <th>Método HTTP</th>
+              <th>Acción en la aplicación</th>
+              <th>Relación con MySQL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GET</strong></td>
+              <td>Obtener datos</td>
+              <td>Realiza una consulta <code>SELECT</code></td>
+            </tr>
+            <tr>
+              <td><strong>POST</strong></td>
+              <td>Crear un nuevo registro</td>
+              <td>Realiza una consulta <code>INSERT</code></td>
+            </tr>
+            <tr>
+              <td><strong>PUT</strong></td>
+              <td>Actualizar un registro completo</td>
+              <td>Realiza una consulta <code>UPDATE</code></td>
+            </tr>
+            <tr>
+              <td><strong>PATCH</strong></td>
+              <td>Actualizar una parte del registro</td>
+              <td>Realiza una consulta <code>UPDATE</code> parcial</td>
+            </tr>
+            <tr>
+              <td><strong>DELETE</strong></td>
+              <td>Eliminar datos</td>
+              <td>Realiza una consulta <code>DELETE</code></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h2 class="card-title h4 mb-3">Relación entre ellos</h2>
-          <p>
-            En una aplicación web, el navegador o una herramienta como <span class="highlight">cURL</span> envía una petición HTTP
-            a un servidor creado con <span class="highlight">Node.js</span>.
-            Ese servidor procesa la solicitud y, si necesita información guardada, consulta la base de datos <span class="highlight">MySQL</span>.
-          </p>
-          <p>
-            Por ejemplo, cuando una aplicación quiere mostrar usuarios, puede hacer una petición <span class="highlight">GET</span>.
-            Node.js recibe esa petición, ejecuta una consulta SQL en MySQL, obtiene los datos y los devuelve en formato JSON.
-          </p>
-          <p class="mb-0">
-            En cambio, si se quiere registrar un nuevo usuario, se usa <span class="highlight">POST</span>, Node.js recibe la información del formulario,
-            la inserta en MySQL y responde con el resultado.
-          </p>
-        </div>
-      </div>
+      <h3>Ejemplo con Node.js</h3>
+      <p>
+        En Node.js, normalmente se usa un framework como <strong>Express</strong> y un conector como
+        <strong>mysql2</strong> para comunicar la aplicación con la base de datos MySQL.
+        Cada ruta puede estar asociada a un método HTTP diferente.
+      </p>
+      <pre class="bg-dark text-white p-3 rounded"><code>#Consultar
+app.get('/usuarios', obtenerUsuarios);
+
+#Insertar
+app.post('/usuarios', crearUsuario);
+
+#Actualizar
+app.put('/usuarios/:id', actualizarUsuario);
+
+#Eliminar
+app.delete('/usuarios/:id', eliminarUsuario);</code></pre>
+      <p>
+        Así, el servidor decide qué consulta SQL ejecutar según el método HTTP recibido.
+      </p>
     </section>
 
     <section class="mb-5">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h2 class="card-title h4 mb-3">Resumen</h2>
-          <p class="mb-0">
-            Los métodos HTTP indican la acción que se quiere realizar, Node.js actúa como intermediario entre el cliente y MySQL,
-            y cURL sirve para probar esas peticiones desde la terminal. Juntos permiten crear y probar aplicaciones web dinámicas.
-          </p>
-        </div>
-      </div>
+      <h3>¿Qué es cURL?</h3>
+      <p>
+        <strong>cURL</strong> es una herramienta de línea de comandos que permite enviar solicitudes a un servidor
+        web desde la terminal. Se usa mucho para probar APIs, verificar respuestas y simular peticiones HTTP sin
+        necesidad de usar un navegador.
+      </p>
+      <p>
+        Con cURL puedes hacer peticiones <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong> y
+        <strong>DELETE</strong>, enviar encabezados, autenticación y datos en formato JSON.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>Ejemplos de cURL</h3>
+      <pre class="bg-dark text-white p-3 rounded"><code># Obtener datos
+curl http://localhost:3000/usuarios
+
+# Enviar datos con POST
+curl -X POST http://localhost:3000/usuarios -H "Content-Type: application/json" -d '{"nombre":"Ana","edad":20}'
+
+# Actualizar datos con PUT
+curl -X PUT http://localhost:3000/usuarios/1 -H "Content-Type: application/json" -d '{"nombre":"Ana López","edad":21}'
+
+# Eliminar datos
+curl -X DELETE http://localhost:3000/usuarios/1</code></pre>
+      <p>
+        cURL es útil para programadores porque permite probar rápidamente si una API funciona correctamente.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h3>Fuentes de información</h3>
+
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods" target="_blank" rel="noopener noreferrer">
+            MDN Web Docs – Métodos HTTP</a>
+        </li>
+        <li>
+          <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
+            Node.js – Sitio oficial y documentación
+          </a>
+        </li>
+        <li>
+          <a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer">
+            MySQL Documentation – Documentación oficial de MySQL
+          </a>
+        </li>
+        <li>
+          <a href="https://curl.se/docs/" target="_blank" rel="noopener noreferrer">
+            cURL Documentation – Documentación oficial de cURL
+          </a>
+        </li>
+      </ul>
     </section>
 
   </main>
@@ -155,9 +225,10 @@
       <a href="/" class="mb-3 me-2 mb-md-0 lh-1">
         <img src="./Lynx.svg" alt="Logo">
       </a>
-      <span class="mb-3 mb-md-0">© 2026 </span>
+      <span class="mb-3 mb-md-0">© 2026 Kyan Camacho</span>
     </div>
   </footer>
+
 </body>
 
 </html>
